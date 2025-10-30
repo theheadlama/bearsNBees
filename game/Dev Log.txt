@@ -1,0 +1,21 @@
+Dev Log
+
+11/28/2025
+
+On Tuesday I decided to throw together an app using the flocking system on p5.js that I'd seen Daniel Shiffman use. It's not at all difficult to implement nor even that complicated.
+
+The first thing I did was to make it interactive by adding a repulsion from the mouse position. This made it a little more fun to play with. I added a couple extra features to allow the boids to push away from the mouse at greater than their typical max velocity and acceleration. 
+
+After doing that, I sort of merged it with the bear prototype, and I replaced the boids with the squirrel asset. to make it look better I had the squirrel stay oriented horizontally and just flip according to its direction of movement. It was interesting. 
+
+I added in the Player class from my prior prototoype in order to enable control of the bear by the controller instead of by the mouse. Much better.
+
+I replaced the squirrel with a bee asset I purchased from Etsy. Fun. the bees go back to rotating like boids rather than the flipping like the squirrel
+
+
+11/30/25
+
+After Kenji played the prototype, he suggested making the bees spawn from a beehive instead of just the mouse position (he had played around with making as many boids as he could). I added a beehive asset (again purchased from Etsy) and had the bees spawn from there on mouse click. They still evade the bear. 
+
+I also added a feature where the bees despawn if they happen to come close to the beehive. They don't seek the hive, which perhaps they should.
+
