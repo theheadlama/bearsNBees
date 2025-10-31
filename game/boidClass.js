@@ -41,7 +41,7 @@ class Boid {
     let cohesion = this.cohesion(boids);
 
     let bearSeparation = 100.0;
-    let distanceToBear = p5.Vector.dist(this.position, bear.position);
+    let distanceToBear = p5.Vector.dist(this.position, player1.position);
 
     let targetSeparation = bearSeparation;
     let distanceToTarget = distanceToBear;
@@ -49,7 +49,7 @@ class Boid {
     if (distanceToTarget < targetSeparation) {
         this._maxSpeed += 2 * (targetSeparation - distanceToTarget) / targetSeparation;
         this._maxForce += 2 * (targetSeparation - distanceToTarget) / targetSeparation;
-        let fleeForce = p5.Vector.sub(this.position, bear.position);
+        let fleeForce = p5.Vector.sub(this.position, player1.position);
         fleeForce.normalize();
         fleeForce.mult(this._maxSpeed);
         fleeForce.sub(this.velocity);

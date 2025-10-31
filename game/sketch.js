@@ -11,7 +11,7 @@ let flockCount = 30;
 let bg;
 let bearImage;
 let beeImage;
-let bear;
+let player1;
 let beeHiveImage;
 let beeHive;
 let beeHivePosition;
@@ -23,7 +23,7 @@ Gamepad API Event Listeners
 window.addEventListener("gamepadconnected", (event) => {
   console.log("Gamepad connected", event.gamepad);
   connectedGamepad = event.gamepad; // assign the connected gamepad to var
-  bear.addGamePad(0);
+  player1.addGamePad(0);
 });
 
 window.addEventListener("gamepaddisconnected",(event) => {
@@ -55,7 +55,7 @@ function setup() {
   beeImage.resize(30,30);
   beeHiveImage.resize(40,40);
 
-  bear = new Player(bearImage,createVector(width/2, height / 2));
+  player1 = new Player(bearImage,createVector(width/2, height / 2));
   beeHivePosition = createVector(415, 327);
 
   flock = new Flock();
@@ -72,17 +72,18 @@ function setup() {
 }
 
 function draw() {
+  imageMode(mode= CORNER);
   background(bg);
   flock.run();
-
+  imageMode(mode= CENTER);
   image(beeHiveImage, 415, 327);
 
   //draw the bear at the mouse position
   //  image(bearImage, mouseX - bearImage.width / 2, mouseY - bearImage.height / 2);
 
-   	bear.update();
- 	bear.move();
- 	bear.show();
+   	player1.update();
+ 	  player1.move();
+ 	  player1.show();
 }
 
 // On mouse drag, add a new boid to the flock

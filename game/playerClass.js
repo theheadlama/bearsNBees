@@ -149,7 +149,18 @@ class Player {
   } // move
   
   show() {
-    image(this._sprite, this._position.x, this._position.y, 50 ,50);
+    push();
+    translate(this.position.x, this.position.y);
+ 
+    imageMode(CENTER)
+
+    if(this._velocity.x < 0) {
+        scale(-1,1);
+    }
+    image(this._sprite, 0, 0);
+
+    pop();
+    
   } 
 
   set directionalInput(value) {
